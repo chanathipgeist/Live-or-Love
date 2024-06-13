@@ -10,6 +10,7 @@ with open('adaboost_model.pkl', 'rb') as file:
 # Load the questions from the JSON file โหลด คำถาม
 with open('questions.json', 'r') as file:
     questions = json.load(file)
+    
 
 # Main function to run the web app
 def main():
@@ -26,7 +27,7 @@ def main():
     # Display the questions and collect answers
     for i, (atr_name, question) in enumerate(questions.items(), start=1):
         st.markdown(f'<span style="font-size: 24px; color: black; font-weight: bold;">Question {i}:</span>', unsafe_allow_html=True)
-        st.write(question)        
+        st.write(question)
         answers[atr_name] = st.slider(f'Choose for Question:{i}', 0, 4, 2)
 
     # Add a button for submission
